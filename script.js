@@ -1,4 +1,6 @@
+// -------------------------------------------------------------------------
 // Funcion para obtener los datos del JSON
+// -------------------------------------------------------------------------
 const obtenerDatos = async (url) => {
   try {
     let respuesta = await fetch(url);
@@ -16,7 +18,9 @@ const obtenerDatos = async (url) => {
   }
 };
 
+// -------------------------------------------------------------------------
 // Función que sube los datos al JSON en el servidor
+// -------------------------------------------------------------------------
 const subirDatos = async (url, nombre, edad, ciudad) => {
   try {
     let respuesta = await fetch(url, {
@@ -35,7 +39,7 @@ const subirDatos = async (url, nombre, edad, ciudad) => {
 
     // Verificar la respuesta del servidor
     console.log("Respuesta del servidor después de POST:", await respuesta.text());
-
+    
 
     // Opcional: Realizar una solicitud GET para obtener los datos actualizados
     obtenerDatos(url);
@@ -46,12 +50,14 @@ const subirDatos = async (url, nombre, edad, ciudad) => {
   }
 };
 
+// -------------------------------------------------------------------------
 // PROGRAMA PRINCIPAL
-subirDatos(
-  "https://pruebas-api.netlify.app/datos.json",
-  "Kelly Mporta",
-  35,
-  "Miami"
-);
+// -------------------------------------------------------------------------
+// subirDatos(
+  //   "https://pruebas-api.netlify.app/datos.json",
+  //   "Kelly Mporta",
+//   35,
+//   "Miami"
+// );
 
-// obtenerDatos("https://www.girabienes.com/datos.json");
+obtenerDatos("https://pruebas-api.netlify.app/datos.json");
