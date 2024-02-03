@@ -53,11 +53,6 @@ const subirDatos = async (url, nombre, edad, ciudad) => {
 // -------------------------------------------------------------------------
 // PROGRAMA PRINCIPAL
 // -------------------------------------------------------------------------
-// subirDatos(
-  //   "https://pruebas-api.netlify.app/datos.json",
-  //   "Kelly Mporta",
-//   35,
-//   "Miami"
-// );
+subirDatos("https://pruebas-api.netlify.app/datos.json", "Kelly Mporta", 35, "Miami");
 
-obtenerDatos("https://pruebas-api.netlify.app/datos.json");
+// obtenerDatos("https://pruebas-api.netlify.app/datos.json");
