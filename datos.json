@@ -1,0 +1,19 @@
+  [
+    {
+      "nombre": "Juan Perez",
+      "edad": 22,
+      "ciudad": "Cali"
+    },
+
+    {
+      "nombre": "Maria Gómez",
+      "edad": 19,
+      "ciudad": "Medellin"
+    },
+
+    {
+      "nombre": "Pedro Martinez",
+      "edad": 45,
+      "ciudad": "Nueva York"
+    }
+  ]
