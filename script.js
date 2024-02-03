@@ -48,7 +48,7 @@ const subirDatos = async (url, nombre, edad, ciudad) => {
 
 // PROGRAMA PRINCIPAL
 subirDatos(
-  "./datos.json",
+  "https://pruebas-api.netlify.app/datos.json",
   "Kelly Mporta",
   35,
   "Miami"
