@@ -21,9 +21,9 @@ const obtenerDatos = async (url) => {
 // -------------------------------------------------------------------------
 // Función que sube los datos al JSON en el servidor
 // -------------------------------------------------------------------------
-const subirDatos = async (url, nombre, edad, ciudad) => {
+const subirDatos = async (nombre, edad, ciudad) => {
   try {
-    let respuesta = await fetch(url, {
+    let respuesta = await fetch("https://pruebas-api.netlify.app/datos.json", {
       method: "POST",
       headers: { "content-type": "application/json" },
       body: JSON.stringify({
@@ -38,13 +38,16 @@ const subirDatos = async (url, nombre, edad, ciudad) => {
     }
 
     // Verificar la respuesta del servidor
-    console.log("Respuesta del servidor después de POST:", await respuesta.text());
+    console.log(
+      "Respuesta del servidor después de POST:",
+      await respuesta.text()
+    );
     
 
     // Opcional: Realizar una solicitud GET para obtener los datos actualizados
     obtenerDatos(url);
 
-    
+
   } catch (error) {
     console.error("Se ha producido el error: ", error);
   }
@@ -53,6 +56,6 @@ const subirDatos = async (url, nombre, edad, ciudad) => {
 // -------------------------------------------------------------------------
 // PROGRAMA PRINCIPAL
 // -------------------------------------------------------------------------
-subirDatos("https://pruebas-api.netlify.app/datos.json", "Kelly Mporta", 35, "Miami");
+subirDatos("Kelly Mporta", 35, "Miami");
 
 // obtenerDatos("https://pruebas-api.netlify.app/datos.json");
