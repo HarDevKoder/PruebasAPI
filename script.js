@@ -1,9 +1,9 @@
 // -------------------------------------------------------------------------
 // Funcion para obtener los datos del JSON
 // -------------------------------------------------------------------------
-const obtenerDatos = async (url) => {
+const obtenerDatos = async () => {
   try {
-    let respuesta = await fetch(url);
+    let respuesta = await fetch("https://pruebas-api.netlify.app/datos.json");
 
     if (!respuesta.ok) {
       throw new Error(
@@ -42,11 +42,9 @@ const subirDatos = async (nombre, edad, ciudad) => {
       "Respuesta del servidor después de POST:",
       await respuesta.text()
     );
-    
 
     // Opcional: Realizar una solicitud GET para obtener los datos actualizados
     obtenerDatos(url);
-
 
   } catch (error) {
     console.error("Se ha producido el error: ", error);
@@ -56,6 +54,5 @@ const subirDatos = async (nombre, edad, ciudad) => {
 // -------------------------------------------------------------------------
 // PROGRAMA PRINCIPAL
 // -------------------------------------------------------------------------
-subirDatos("Kelly Mporta", 35, "Miami");
-
-// obtenerDatos("https://pruebas-api.netlify.app/datos.json");
+// subirDatos("Kelly Mporta", 35, "Miami");
+obtenerDatos();
